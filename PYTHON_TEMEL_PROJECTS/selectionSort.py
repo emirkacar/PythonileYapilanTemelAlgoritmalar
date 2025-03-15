@@ -1,15 +1,14 @@
-L = [12,23,7,-8,10,6,16,7,7,9]
-print("Orijinal hali:")
-print(L)
-print()
-
-print("Degisiklik sonrasi:")
 
 
-for i in range (len(L)):
-    for j in range (len(L)-1):
-        if (L[j+1] < L[j]):
-            gecici = L[j+1]
-            L[j+1] = L[j]
-            L[j] = gecici
-print(L)
+metin = "Python ile algoritma geliştirmek çok eğlenceli"
+metin = metin.split()
+n = len(metin)
+
+for i in range(n):
+    min_index = i
+    for j in range(i+1,n):
+        if(len(metin[j]) < len(metin[min_index])):
+            min_index = j
+    metin[min_index] , metin[i] = metin[i] , metin[min_index]
+print(metin)
+
